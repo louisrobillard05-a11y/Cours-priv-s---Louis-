@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8CC7A;
+  --gold-dark: #A07830;
+  --ink: #0D0D0D;
+  --ink-soft: #1A1A1A;
+  --ink-muted: #333;
+  --cream: #FAF8F2;
+  --cream-dark: #F0EBD8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body), sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  margin: 0;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), serif;
+}
+
+/* Gold button */
+.btn-gold {
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-gold:hover { background: var(--gold-light); }
+.btn-gold:active { transform: scale(0.98); }
+
+/* Dark button */
+.btn-dark {
+  background: var(--ink);
+  color: var(--gold);
+  font-family: var(--font-body), sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-dark:hover { background: var(--ink-soft); }
+
+/* Input */
+.input-field {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #d4c9a8;
+  border-radius: 4px;
+  background: white;
+  font-family: var(--font-body), sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  transition: border-color 0.15s;
+  outline: none;
+}
+.input-field:focus { border-color: var(--gold); }
+
+/* Card */
+.card {
+  background: white;
+  border: 1px solid #e8dfc0;
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+
+/* Gold divider */
+.gold-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border: none;
+  margin: 32px 0;
+}
+
+/* Park badge */
+.park-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--ink);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* Status badges */
+.badge-confirmed { background: #e8f5e9; color: #2e7d32; border-radius: 20px; padding: 3px 10px; font-size: 12px; font-weight: 600; }
+.badge-cancelled { background: #fdecea; color: #c62828; border-radius: 20px; padding: 3px 10px; font-size: 12px; font-weight: 600; }
+.badge-available { background: #fff8e1; color: #9a7d0a; border-radius: 20px; padding: 3px 10px; font-size: 12px; font-weight: 600; }
+.badge-full { background: #f3e5f5; color: #6a1b9a; border-radius: 20px; padding: 3px 10px; font-size: 12px; font-weight: 600; }
+
+/* Fade in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.35s ease both; }
+.fade-up-2 { animation: fadeUp 0.35s ease 0.1s both; }
+.fade-up-3 { animation: fadeUp 0.35s ease 0.2s both; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
